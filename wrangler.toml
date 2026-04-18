@@ -1,0 +1,42 @@
+name = "mailfree-d1"
+# name = "mail-exhibit"
+main = "src/server.js"
+compatibility_date = "2024-01-01"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "TEMP_MAIL_DB"
+database_name = "maill_free_db" #你的d1数据库名称
+database_id = "ab9db161-ad02-44fe-8560-047457304e16" # 你的database_id
+# 登录会话过期时间（单位：天，默认7天）
+# 环境变量
+[vars]
+# 邮箱域名，多个用逗号分隔
+MAIL_DOMAIN = "smanx.dpdns.org"
+# 严格管理员密码（请修改为强密码）
+ADMIN_PASSWORD = "cxf123456"
+# 严格管理员用户名（默认 admin）
+ADMIN_NAME = "admin"
+# JWT 签名密钥（请修改为随机字符串）
+JWT_TOKEN = "gsusbdhusjwbgstwujwhgsywujsvgyfwjsjbgywubscujs"
+# 会话过期时间（单位：天，默认7天）
+SESSION_EXPIRE_DAYS = "7"
+# 邮件转发规则（可选）
+# FORWARD_RULES = "vip=a@example.com,*=fallback@example.com"
+# Resend 发件密钥（可选，支持多域名配置）
+# RESEND_API_KEY = "re_xxxxxxxxxxxxxxxxxxxxxxxx"
+
+
+# 静态资源目录（Workers + Assets）
+[assets]
+directory = "public"
+# 显式指定绑定名，确保在 Worker 中通过 env.ASSETS 可用
+binding = "ASSETS"
+
+
+# wrangler.toml (wrangler v3.88.0^) 日志服务
+# [observability.logs]
+# enabled = true
+
+
+
